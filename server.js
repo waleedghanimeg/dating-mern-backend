@@ -9,7 +9,7 @@ mongoose.connect(url, {
     useUnifiedTopology: true
 })
 const app = express()
-const port = process.env.port || 8001
+const port = process.env.PORT || 8001
 app.use(express.json())
 app.use(cors())
 app.get('/', (req, res) => { res.status(200).send("Hello Web Age") })
@@ -36,4 +36,4 @@ app.get('/dating/cards', async (req, res) => {
 
 })
 
-app.listen(port, () => console.log('Listining on localhost: ${port} '))
+app.listen(port, () => console.log(`Listining on localhost: ${port} `))
